@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { auth } from '../firebase';
 import './SimpleLeaderboard.css';
 
 const SimpleLeaderboard = () => {
     const [leaderboard, setLeaderboard] = useState([]);
     const [userRank, setUserRank] = useState(null);
-    const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(() => {
         loadLeaderboard();
@@ -96,7 +94,7 @@ const SimpleLeaderboard = () => {
                     leaderboard.map((entry, index) => (
                         <div
                             key={entry.userId || index}
-                            className={`leaderboard-item ${entry.userId === currentUser?.uid ? 'user-entry' : ''}`}
+                            className={`leaderboard-item ${entry.isUser ? 'user-entry' : ''}`}
                         >
                             <div className="rank">
                                 <span className="rank-icon" style={{ color: getRankColor(index + 1) }}>
@@ -107,8 +105,8 @@ const SimpleLeaderboard = () => {
                             <div className="user-info">
                                 <span className="avatar">👤</span>
                                 <div className="user-details">
-                                    <span className="name">{entry.userName || 'Anonymous'}</span>
-                                    {entry.userId === currentUser?.uid && <span className="you-badge">You</span>}
+                                    <span className="name">{entry.name || 'Anonymous'}</span>
+                                    {entry.isUser && <span className="you-badge">You</span>}
                                 </div>
                             </div>
 

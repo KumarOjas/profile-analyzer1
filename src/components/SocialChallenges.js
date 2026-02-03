@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { auth, db } from '../firebase';
-import { ref, onValue, push, set, update, remove } from 'firebase/database';
+import { ref, onValue, push, set, update } from 'firebase/database';
 import './SocialChallenges.css';
 
 const SocialChallenges = () => {
@@ -89,7 +89,7 @@ const SocialChallenges = () => {
         });
 
         return () => unsubscribe();
-    }, [sampleChallenges]);
+    }, []);
 
     const createTeam = async () => {
         if (!currentUser || !newTeam.name.trim()) return;
@@ -116,37 +116,7 @@ const SocialChallenges = () => {
         }
     };
 
-    const joinTeam = async (teamId) => {
-        if (!currentUser) return;
 
-        try {
-            const teamRef = ref(db, `teams/${teamId}`);
-            const teamSnapshot = await new Promise((resolve) => {
-                onValue(teamRef, resolve, { onlyOnce: true });
-            });
-            const teamData = teamSnapshot.val();
-
-            if (teamData.members.length >= teamData.maxMembers) {
-                alert('Team is full!');
-                return;
-            }
-
-            if (teamData.members.includes(currentUser.uid)) {
-                alert('You are already in this team!');
-                return;
-            }
-
-            const updatedMembers = [...teamData.members, currentUser.uid];
-            const updatedMemberNames = [...teamData.memberNames, currentUser.displayName || currentUser.email];
-
-            await update(teamRef, {
-                members: updatedMembers,
-                memberNames: updatedMemberNames
-            });
-        } catch (error) {
-            console.error('Error joining team:', error);
-        }
-    };
 
     const shareChallenge = (challenge) => {
         const shareText = `🚀 Join the ${challenge.title} challenge on OJAS JEE Classes! ${challenge.reward} up for grabs! #OJASChallenge #JEESuccess`;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './StreakCounter.css';
 
 const StreakCounter = () => {
@@ -7,30 +7,27 @@ const StreakCounter = () => {
     const [lastVisitDate, setLastVisitDate] = useState(null);
     const [badges, setBadges] = useState([]);
 
-    useEffect(() => {
-        // Load streak data from localStorage
-        const savedStreak = localStorage.getItem('studyStreak');
-        const savedLongest = localStorage.getItem('longestStreak');
-        const savedLastVisit = localStorage.getItem('lastVisitDate');
+    const updateBadges = useCallback(() => {
+        const newBadges = [];
 
-        if (savedStreak) setCurrentStreak(parseInt(savedStreak));
-        if (savedLongest) setLongestStreak(parseInt(savedLongest));
-        if (savedLastVisit) setLastVisitDate(savedLastVisit);
+        // Streak-based badges
+        if (currentStreak >= 1) newBadges.push({ emoji: '🌟', name: 'First Step', description: 'Started your journey!' });
+        if (currentStreak >= 3) newBadges.push({ emoji: '🔥', name: 'On Fire', description: '3 days in a row!' });
+        if (currentStreak >= 7) newBadges.push({ emoji: '⚡', name: 'Week Warrior', description: '7 days streak!' });
+        if (currentStreak >= 14) newBadges.push({ emoji: '💪', name: 'Fortitude', description: '14 days strong!' });
+        if (currentStreak >= 30) newBadges.push({ emoji: '👑', name: 'Study King', description: '30 days champion!' });
+        if (currentStreak >= 50) newBadges.push({ emoji: '🎖️', name: 'Legend', description: '50 days legend!' });
+        if (currentStreak >= 100) newBadges.push({ emoji: '🏆', name: 'Century Club', description: '100 days master!' });
 
-        // Check if user visited today
-        const today = new Date().toDateString();
-        const lastVisit = savedLastVisit;
+        // Longest streak badges
+        if (longestStreak >= 10) newBadges.push({ emoji: '🎯', name: 'Consistent', description: '10+ day best streak!' });
+        if (longestStreak >= 25) newBadges.push({ emoji: '🚀', name: 'Dedicated', description: '25+ day best streak!' });
+        if (longestStreak >= 50) newBadges.push({ emoji: '⭐', name: 'Unstoppable', description: '50+ day best streak!' });
 
-        if (lastVisit !== today) {
-            // First visit today
-            updateStreak(today);
-        }
+        setBadges(newBadges);
+    }, [currentStreak, longestStreak]);
 
-        // Update badges based on streak
-        updateBadges();
-    }, []);
-
-    const updateStreak = (today) => {
+    const updateStreak = useCallback((today) => {
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
         const yesterdayString = yesterday.toDateString();
@@ -55,27 +52,30 @@ const StreakCounter = () => {
         localStorage.setItem('lastVisitDate', today);
 
         updateBadges();
-    };
+    }, [currentStreak, lastVisitDate, longestStreak, updateBadges]);
 
-    const updateBadges = () => {
-        const newBadges = [];
+    useEffect(() => {
+        // Load streak data from localStorage
+        const savedStreak = localStorage.getItem('studyStreak');
+        const savedLongest = localStorage.getItem('longestStreak');
+        const savedLastVisit = localStorage.getItem('lastVisitDate');
 
-        // Streak-based badges
-        if (currentStreak >= 1) newBadges.push({ emoji: '🌟', name: 'First Step', description: 'Started your journey!' });
-        if (currentStreak >= 3) newBadges.push({ emoji: '🔥', name: 'On Fire', description: '3 days in a row!' });
-        if (currentStreak >= 7) newBadges.push({ emoji: '⚡', name: 'Week Warrior', description: '7 days streak!' });
-        if (currentStreak >= 14) newBadges.push({ emoji: '💪', name: 'Fortitude', description: '14 days strong!' });
-        if (currentStreak >= 30) newBadges.push({ emoji: '👑', name: 'Study King', description: '30 days champion!' });
-        if (currentStreak >= 50) newBadges.push({ emoji: '🎖️', name: 'Legend', description: '50 days legend!' });
-        if (currentStreak >= 100) newBadges.push({ emoji: '🏆', name: 'Century Club', description: '100 days master!' });
+        if (savedStreak) setCurrentStreak(parseInt(savedStreak));
+        if (savedLongest) setLongestStreak(parseInt(savedLongest));
+        if (savedLastVisit) setLastVisitDate(savedLastVisit);
 
-        // Longest streak badges
-        if (longestStreak >= 10) newBadges.push({ emoji: '🎯', name: 'Consistent', description: '10+ day best streak!' });
-        if (longestStreak >= 25) newBadges.push({ emoji: '🚀', name: 'Dedicated', description: '25+ day best streak!' });
-        if (longestStreak >= 50) newBadges.push({ emoji: '⭐', name: 'Unstoppable', description: '50+ day best streak!' });
+        // Check if user visited today
+        const today = new Date().toDateString();
+        const lastVisit = savedLastVisit;
 
-        setBadges(newBadges);
-    };
+        if (lastVisit !== today) {
+            // First visit today
+            updateStreak(today);
+        }
+
+        // Update badges based on streak
+        updateBadges();
+    }, [updateBadges, updateStreak]);
 
     const getStreakEmoji = (streak) => {
         if (streak === 0) return '😴';

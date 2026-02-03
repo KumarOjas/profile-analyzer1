@@ -26,7 +26,7 @@ const PerformanceChart = () => {
 
     useEffect(() => {
         loadChartData();
-    }, [timeRange, loadChartData]);
+    }, [timeRange]);
 
     const loadChartData = () => {
         // Load scores from localStorage
@@ -82,6 +82,10 @@ const PerformanceChart = () => {
             ],
         });
     };
+
+    useEffect(() => {
+        loadChartData();
+    }, [timeRange]);
 
     const options = {
         responsive: true,
