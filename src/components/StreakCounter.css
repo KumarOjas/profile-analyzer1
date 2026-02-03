@@ -1,0 +1,190 @@
+.streak-counter {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.streak-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.streak-header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.streak-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.streak-stats {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.streak-main {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.current-streak, .longest-streak {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.streak-emoji {
+    font-size: 3rem;
+    animation: pulse 2s infinite;
+}
+
+.streak-info h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.streak-info p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.share-streak-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.share-streak-btn:hover {
+    background: white;
+    color: #667eea;
+}
+
+.badges-section {
+    margin-bottom: 30px;
+}
+
+.badges-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.badge-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.badge-card:hover {
+    transform: translateY(-5px);
+}
+
+.badge-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.badge-card h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.badge-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.no-badges {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+.streak-motivation {
+    background: #e8f5e8;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border-left: 5px solid #28a745;
+}
+
+.streak-motivation h3 {
+    color: #155724;
+    margin-bottom: 10px;
+}
+
+.streak-motivation p {
+    color: #155724;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .streak-counter {
+        padding: 15px;
+    }
+
+    .streak-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .streak-emoji {
+        font-size: 2.5rem;
+    }
+
+    .streak-info h3 {
+        font-size: 2rem;
+    }
+
+    .badges-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .badge-card {
+        padding: 15px;
+    }
+}

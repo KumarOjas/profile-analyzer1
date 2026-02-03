@@ -1,0 +1,108 @@
+.exam-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.exam-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.exam-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.exam-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: bold;
+}
+
+.exam-content {
+    display: grid;
+    gap: 2rem;
+}
+
+.exam-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exam-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.exam-section h2 {
+    color: #3498db;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.exam-section p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.exam-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.exam-section li {
+    background: #f8f9fa;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-left: 4px solid #3498db;
+    border-radius: 5px;
+}
+
+.official-link {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.official-link:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .exam-page {
+        padding: 1rem;
+    }
+
+    .exam-header h1 {
+        font-size: 2rem;
+    }
+
+    .exam-icon {
+        font-size: 3rem;
+    }
+
+    .exam-section {
+        padding: 1.5rem;
+    }
+}

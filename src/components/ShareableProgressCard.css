@@ -1,0 +1,131 @@
+.progress-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.card-header p {
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background: var(--bg-color);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.progress-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.share-btn, .download-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.share-btn {
+    background: #25d366;
+    color: white;
+}
+
+.share-btn:hover {
+    background: #128c7e;
+    transform: translateY(-1px);
+}
+
+.download-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.download-btn:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.progress-motivation {
+    text-align: center;
+    padding: 15px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.progress-motivation p {
+    margin: 0;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .progress-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .progress-actions {
+        flex-direction: column;
+    }
+
+    .share-btn, .download-btn {
+        width: 100%;
+    }
+}

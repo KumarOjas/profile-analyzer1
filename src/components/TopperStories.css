@@ -1,0 +1,166 @@
+.topper-stories {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.stories-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stories-header h3 {
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.stories-header p {
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.story-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.story-photo {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.story-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.rank-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.story-content {
+    flex: 1;
+    min-width: 250px;
+}
+
+.story-content h4 {
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+.story-text {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.story-tips h5 {
+    margin: 0 0 8px 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.story-tips ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.story-tips li {
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.story-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.nav-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+.story-indicators {
+    display: flex;
+    gap: 8px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: var(--primary-color);
+}
+
+.story-motivation {
+    text-align: center;
+    padding: 15px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.story-motivation p {
+    margin: 0;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .story-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .story-photo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .story-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

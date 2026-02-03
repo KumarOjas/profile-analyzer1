@@ -1,0 +1,134 @@
+.live-rank-prediction {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.prediction-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.predict-btn {
+    background: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.predict-btn:hover {
+    background: #c82333;
+}
+
+.prediction-results {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rank-display {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rank-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.probability-bar {
+    background: #f8f9fa;
+    border-radius: 20px;
+    height: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.probability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #ffc107, #dc3545);
+    transition: width 0.5s ease;
+}
+
+.improvement-tips {
+    margin-top: 20px;
+}
+
+.improvement-tips h3 {
+    color: #007bff;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    padding: 10px;
+    background: #f8f9fa;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border-left: 4px solid #007bff;
+}
+
+.live-updates {
+    background: #d4edda;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.live-updates h3 {
+    margin-top: 0;
+    color: #155724;
+}
+
+.premium-offer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff3cd;
+    border-radius: 8px;
+}
+
+.premium-btn {
+    background: #ffc107;
+    color: #212529;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.premium-btn:hover {
+    background: #e0a800;
+}

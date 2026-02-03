@@ -1,0 +1,279 @@
+.dost-batch {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.batch-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.batch-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.batch-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Audio Section */
+.audio-section {
+    margin-bottom: 40px;
+}
+
+.audio-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.audio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.audio-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.audio-info h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.audio-info p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.duration {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.audio-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.audio-controls audio {
+    width: 300px;
+}
+
+.share-btn {
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.share-btn:hover {
+    background: #128c7e;
+}
+
+/* Quiz Section */
+.quiz-section {
+    margin-bottom: 40px;
+}
+
+.quiz-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 10px;
+}
+
+.quiz-questions {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question {
+    margin-bottom: 30px;
+}
+
+.quiz-question h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.quiz-option:hover {
+    background: #e9ecef;
+}
+
+.quiz-option input[type="radio"] {
+    margin: 0;
+}
+
+.submit-quiz-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.submit-quiz-btn:hover {
+    background: #0056b3;
+}
+
+.quiz-results {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.quiz-results h3 {
+    color: #155724;
+    margin-bottom: 15px;
+}
+
+.quiz-results p {
+    font-size: 1.2rem;
+    color: #155724;
+    margin-bottom: 20px;
+}
+
+.share-results-btn,
+.retake-quiz-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin: 0 10px;
+    transition: background 0.3s;
+}
+
+.share-results-btn:hover,
+.retake-quiz-btn:hover {
+    background: #1e7e34;
+}
+
+/* Video Section */
+.video-section {
+    margin-bottom: 40px;
+}
+
+.video-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dc3545;
+    padding-bottom: 10px;
+}
+
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-info h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.video-info p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.video-player video {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dost-batch {
+        padding: 10px;
+    }
+
+    .batch-header h1 {
+        font-size: 2rem;
+    }
+
+    .audio-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .audio-controls audio {
+        width: 100%;
+    }
+
+    .video-list {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-options {
+        gap: 8px;
+    }
+
+    .quiz-option {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,248 @@
+.exam-checklist {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.checklist-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.checklist-header h3 {
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.checklist-header p {
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.checklist-progress {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), #4CAF50);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.checklist-actions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reset-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.reset-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+.checklist-content {
+    margin-bottom: 20px;
+}
+
+.checklist-category {
+    margin-bottom: 25px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.category-icon {
+    font-size: 1.5rem;
+}
+
+.category-header h4 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.category-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.checklist-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checklist-item.completed {
+    background: #e8f5e8;
+    border-color: #4CAF50;
+}
+
+.item-checkbox {
+    position: relative;
+}
+
+.item-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.item-checkbox label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.item-checkbox input:checked + label {
+    background: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.item-checkbox input:checked + label::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+}
+
+.item-content {
+    flex: 1;
+}
+
+.item-text {
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.completed-badge {
+    color: #4CAF50;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.checklist-motivation {
+    background: var(--bg-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.checklist-motivation h4 {
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.tip-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.tip-card h5 {
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.tip-card p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.checklist-footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary-color), #4CAF50);
+    color: white;
+    border-radius: 8px;
+}
+
+.checklist-footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .checklist-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .progress-text {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
